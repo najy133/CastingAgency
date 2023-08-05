@@ -24,24 +24,35 @@ Casting Director: Can view, create, update, and delete actors and movies
 
 ### Installation
 1. Clone this repository to your local machine: 
+```
 git clonehttps://github.com/najy133/CastingAgency.git
+```
 
 2. Change into project directory
+```
 cd your-repo-name
+```
 
 3. Create a virtual environment (recommended):
+```
 python -m venv venv
+```
 
 4. Activate the virtual environment: 
     - On Windows:
+    ```
         venv\Scripts\activate
-    
-    - On macOS and Linux: 
+    ```
+
+    - On macOS and Linux:
+    ``` 
         source venv/bin/activate
+    ```
 
 5. Install the required Python packages:
+```
 pip install -r requirements.txt
-
+```
 
 ### Running the App
 
