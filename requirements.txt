@@ -11,7 +11,7 @@ Flask-RESTful==0.3.7
 Flask-Script==2.0.6
 Flask-SQLAlchemy==2.4.0
 greenlet==2.0.2
-importlib-metadata==6.8.0
+importlib-metadata
 itsdangerous==1.1.0
 Jinja2==2.10.1
 jose==1.0.0
