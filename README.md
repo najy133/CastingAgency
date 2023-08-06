@@ -129,7 +129,7 @@ The API returns errors in JSON format, with the following structure:
     "error": 400,
     "message": "Bad Request"
 }
-
+```
 
 ## Available Endpoints
 
