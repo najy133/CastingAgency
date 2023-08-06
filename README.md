@@ -13,6 +13,8 @@ Casting Director: Can view, create, update, and delete actors and movies
     - [Installation](#installation)
     - [Running the App](#running-the-app)
     - [Running Tests](#running-tests)
+    - [Models](#models)
+    - [Endpoints](#endpoints)
 
 ## Getting Started
 
@@ -56,22 +58,7 @@ pip install -r requirements.txt
 
 ### Running the App
 
-1. Make sure you have a PostgreSQL database running on your machine. You can download and install PostgreSQL from the [official website](https://www.postgresql.org/download/).
-
-2. Create two databases: one for development and another for testing. You can use the following commands (replace `your_database_name` with appropriate names):
-
-    ```bash
-    createdb your_database_name
-    createdb your_database_name_test
-    ```
-
-3. Apply migrations to set up the database schema:
-
-    ```bash
-    flask db upgrade
-    ```
-
-4. Set up environment variables:
+1. Set up environment variables:
     - Copy the `setup.bat.example` file to `setup.bat` (Windows) or `setup.sh` (macOS/Linux).
     - Open the copied file and fill in your Auth0 configuration and database URLs.
 
@@ -83,7 +70,7 @@ pip install -r requirements.txt
     source setup.sh
     ```
 
-5. Run the Flask app:
+2. Run the Flask app:
 
     ```bash
     python app.py 
@@ -102,6 +89,97 @@ pip install -r requirements.txt
 ---
 
 
+## Models
+
+### Actor
+
+- Represents an actor in the casting agency.
+- Attributes:
+  - `id` (integer, primary key): Unique identifier for the actor.
+  - `name` (string): Name of the actor.
+  - `age` (integer): Age of the actor.
+  - `gender` (string): Gender of the actor.
+
+### Movie
+
+- Represents a movie managed by the casting agency.
+- Attributes:
+  - `id` (integer, primary key): Unique identifier for the movie.
+  - `title` (string): Title of the movie.
+  - `release_date` (date): Release date of the movie.
+
+
+
+## Endpoints
+
+### Base URL
+
+The API is hosted live using Heroku at the following base URL:
+
+https://casting-agency-deployment-zrkj.onrender.com
+
+
+### Error Handling
+
+The API returns errors in JSON format, with the following structure:
+
+```json
+{
+    "success": false,
+    "error": 400,
+    "message": "Bad Request"
+}
+
+
+## Available Endpoints
+
+### GET /actors
+
+- Retrieves a list of actors.
+- Requires the `get:actors` permission.
+- Returns a list of actor objects.
+
+### GET /movies
+
+- Retrieves a list of movies.
+- Requires the `get:movies` permission.
+- Returns a list of movie objects.
+
+### POST /actors
+
+- Creates a new actor.
+- Requires the `post:actors` permission.
+- Returns the created actor object.
+
+### POST /movies
+
+- Creates a new movie.
+- Requires the `post:movies` permission.
+- Returns the created movie object.
+
+### PATCH /actors/<int:actor_id>
+
+- Updates an existing actor.
+- Requires the `patch:actors` permission.
+- Returns the updated actor object.
+
+### PATCH /movies/<int:movie_id>
+
+- Updates an existing movie.
+- Requires the `patch:movies` permission.
+- Returns the updated movie object.
+
+### DELETE /actors/<int:actor_id>
+
+- Deletes an existing actor.
+- Requires the `delete:actors` permission.
+- Returns a success message.
+
+### DELETE /movies/<int:movie_id>
+
+- Deletes an existing movie.
+- Requires the `delete:movies` permission.
+- Returns a success message.
 
 
 
