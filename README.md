@@ -12,7 +12,7 @@ Casting Director: Can view, create, update, and delete actors and movies
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
     - [Running the App](#running-the-app)
-
+    - [Running Tests](#running-tests)
 
 ## Getting Started
 
@@ -55,6 +55,54 @@ pip install -r requirements.txt
 ```
 
 ### Running the App
+
+1. Make sure you have a PostgreSQL database running on your machine. You can download and install PostgreSQL from the [official website](https://www.postgresql.org/download/).
+
+2. Create two databases: one for development and another for testing. You can use the following commands (replace `your_database_name` with appropriate names):
+
+    ```bash
+    createdb your_database_name
+    createdb your_database_name_test
+    ```
+
+3. Apply migrations to set up the database schema:
+
+    ```bash
+    flask db upgrade
+    ```
+
+4. Set up environment variables:
+    - Copy the `setup.bat.example` file to `setup.bat` (Windows) or `setup.sh` (macOS/Linux).
+    - Open the copied file and fill in your Auth0 configuration and database URLs.
+
+    ```bash
+    # Windows
+    setup.bat
+
+    # macOS/Linux
+    source setup.sh
+    ```
+
+5. Run the Flask app:
+
+    ```bash
+    python app.py 
+    ```
+
+    The app will be accessible at `http://localhost:5000/`. You can interact with the app using a web browser or API tools like Postman.
+
+### Running Tests
+
+1. With the virtual environment activated, run the following command to execute the test suite:
+
+    ```bash
+    python test_app.py
+    ```
+
+---
+
+
+
 
 
 
