@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # CastingAgency
 The Flask Casting Agency API is a RESTful web service that manages actors and movies for a casting agency. It provides various endpoints to perform CRUD operations on actors and movies, as well as role-based authentication and authorization using Auth0.
 
