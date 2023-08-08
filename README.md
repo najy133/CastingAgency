@@ -114,7 +114,7 @@ pip install -r requirements.txt
 
 ### Base URL
 
-The API is hosted live using Heroku at the following base URL:
+The API is hosted live using Render at the following base URL:
 
 https://casting-agency-deployment-zrkj.onrender.com
 
